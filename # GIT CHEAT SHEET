@@ -1,5 +1,5 @@
 # GIT CHEAT SHEET
-*This cheat sheet will collate commands from the google coursera course on Git and GitHub.*
+*This cheat sheet will collate commands from the google Coursera course on Git and GitHub.*
 
 # Week 1
 
@@ -47,7 +47,7 @@ git config --global user.name "myName"
 git config -l
 ```
 
-Initalise git with the `init` or `clone` command:
+Initialize git with the `init` or `clone` command:
 ```bash
 git init
 git clone
@@ -59,7 +59,7 @@ ls -la
 ls -l -git
 ```
 
-Use the `add` command to add files to the git staging area, for untracked or modified files:
+Use the `add` command to add files to the git staging area, for un-tracked or modified files:
 ```bash
 git add filename.ext
 ```
@@ -71,7 +71,7 @@ git status
 
 use the `commit` command to add the file to the git directory, use the `-m` flag to give it a commit message:
 ```bash
-git commit -m "My first committ!"
+git commit -m "My first commit!"
 ```
 
 ## 3) Typical git workflow
