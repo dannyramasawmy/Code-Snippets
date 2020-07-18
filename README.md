@@ -1,5 +1,9 @@
 # GIT CHEAT SHEET
-*This cheat sheet will collate commands from the google Coursera course on Git and GitHub.*
+*This cheat sheet will collate useful commands from the google Coursera course on Git and GitHub.*
+
+- **Author**: Danny Ramasawmy
+- **Date Created**: 2020-07-18
+- **Date modified**: 2020-07-18
 
 # Week 1
 
