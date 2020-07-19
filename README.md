@@ -106,4 +106,27 @@ Skipping the staging, if all the files are going to be committed, the staging st
 git commit -a -m "Will skip the staging step"
 ```
 
-  
+The patches that were made in each get commit can be viewed by passing the `-p` flag, or by using the `show` command:
+```bash
+git log -p
+git show <ID>
+```
+
+Use the `diff` command to see the changes that you have made (just like the `diff` command) before committing to the repository:
+```bash
+git diff
+``` 
+
+Use the `-p` flag to review each change and whether they should be committed or not:
+```bash
+git add -p
+```
+
+When we need to delete or rename files
+
+## Undoing changes
+
+
+## Branches 
+
+
