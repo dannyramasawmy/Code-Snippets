@@ -163,9 +163,25 @@ git revert HEAD
 git revert <ID, 30ekjsd...>
 ```
 
-
-
-
 ## Branches 
+Branch is a pointer to particular commit, it can be an independent line. The main branch is called the MASTER, this is the current working version, which is tidy and stable. New branches can be added to develop and try features.
 
+To check what branches exist in a repository use the `branch` command:
+```bash
+git branch
+```
 
+To make a new branch, call the `branch` command with the name of the new branch, call `git branch` to check which branches exists, and what the current branch is:
+```bash
+git branch new-feature
+```
+
+To change to the branch use the `checkout` command:
+```bash
+git checkout new-feature
+```
+
+To create a new branch and switch to it at the same time:
+```bash
+git checkout -b new-branch
+```
