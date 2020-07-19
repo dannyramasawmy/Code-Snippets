@@ -197,3 +197,7 @@ git checkout master
 git merge <branchname>
 ```
 
+If the master branch is catching up with the development branch, then this is called a fast forward merge. If the two branches have diverged, this is called a three-way merge. If the merges were made in separate files git can merge them successfully. If the same part of the files in both branches have modifications then there will be a conflict in the merge, so git will ask for which version to keep, at this point you can edit both.
+
+
+
