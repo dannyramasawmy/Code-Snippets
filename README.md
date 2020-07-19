@@ -96,4 +96,14 @@ Use `log` flag to print these messages:
 ```bash
 git log
 ```
+
+# Week 2
+
+## Advanced features
+
+Skipping the staging, if all the files are going to be committed, the staging step can be skipped using the `-a` input flag:
+```bash
+git commit -a -m "Will skip the staging step"
+```
+
   
