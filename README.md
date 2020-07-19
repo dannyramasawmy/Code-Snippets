@@ -122,7 +122,25 @@ Use the `-p` flag to review each change and whether they should be committed or 
 git add -p
 ```
 
-When we need to delete or rename files
+To delete files, use `rm`, this deletes the file from the directory and stages it to be committed.
+```bash
+git rm <filename>
+```
+
+To rename a file use `mv`, this renames a file name and stages it to be committed, this command can also be used to move files between directories.
+```bash
+git mv <filename> <newfilename>
+```
+
+To ignore files in a folder (for example large data files) make a `.gitignore` file. This file needs to be tracked similar to other files:
+```bash
+.gitignore
+    .txt
+    .<extension>
+```
+
+
+
 
 ## Undoing changes
 
