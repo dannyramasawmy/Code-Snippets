@@ -185,3 +185,15 @@ To create a new branch and switch to it at the same time:
 ```bash
 git checkout -b new-branch
 ```
+
+To delete a branch use `-d` flag, git will throw a warning if there are changes which have not been merged into the master branch:
+```bash
+git branch -d <branchname>
+```
+
+To merge two branches, use `git merge`, firstly move to the master branch (if we want to merge the development into the master):
+```bash
+git checkout master
+git merge <branchname>
+```
+
