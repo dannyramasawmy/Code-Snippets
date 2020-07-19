@@ -92,9 +92,10 @@ git commit -m <message>
 2. Empty line
 3. More details, with detail explanations, references and links
 
-Use `log` flag to print these messages:
+Use `log` flag to print these messages, add a flag with a number to see the last n commits:
 ```bash
 git log
+git log -2
 ```
 
 # Week 2
@@ -156,8 +157,11 @@ To fix changes that have already been committed, use the `--amend` flag, i.e., f
 git commit --amend
 ```
 
-If a commit needs to be reverted, "rollbacked" use, `revert`, this creates a commit which is the inverse of all the commits, so it keeps the history of the commits.
-
+If a commit needs to be reverted, "rollbacked" use, `revert`, this creates a commit which is the inverse of all the commits, so it keeps the history of the commits. Its good to add a reason to the revert, use the `<ID>` to revert back to a specific commit.
+```bash
+git revert HEAD
+git revert <ID, 30ekjsd...>
+```
 
 
 
