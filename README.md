@@ -3,7 +3,7 @@
 
 - **Author**: Danny Ramasawmy
 - **Date Created**: 2020-07-18
-- **Date modified**: 2020-07-18
+- **Date modified**: 2020-07-19
 
 # Week 1
 
@@ -139,10 +139,27 @@ To ignore files in a folder (for example large data files) make a `.gitignore` f
     .<extension>
 ```
 
-
-
-
 ## Undoing changes
+It is useful to revert changes in git. The `checkout` command can be used to "checkout" a version of the file before they get staged. I.e., if there is an error in the file `<filename>`, the `checkout` command can be used to revert the changes to how it was previously, the `-p` flag allows you to review the changes individually:
+```bash
+git checkout <filename>
+git checkout <filename> -p
+```
+
+To undo changes after they have been staged, i.e, after using `git add *`, use the `reset` command:
+```bash
+git reset HEAD <filename>
+```
+
+To fix changes that have already been committed, use the `--amend` flag, i.e., forgot to add a file to be tracked. This will amend and overwrite the last commit. Avoid amending these commits that have been pushed to public repositories:
+```bash
+git commit --amend
+```
+
+If a commit needs to be reverted, "rollbacked" use, `revert`, this creates a commit which is the inverse of all the commits, so it keeps the history of the commits.
+
+
+
 
 
 ## Branches 
