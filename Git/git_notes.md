@@ -1,13 +1,19 @@
-# GIT Notes
+# Git Notes
 *This cheat sheet will collate useful commands from the google Coursera course on Git and GitHub.*
 
 - **Author**: Danny Ramasawmy
 - **Date Created**: 2020-07-18
-- **Date modified**: 2020-07-19
+- **Date modified**: 2020-07-22
 
-# Week 1
+Jump to section:
+- [Week 1](#Week-1) | Bash commands, version control, basic workflow
+- [Week 2](#Week-2) | Advanced features, undoing changes, branches
+- [Week 3](#Week-3) |
+- [Week 4](#Week-4) |
 
-## 1) Bash commands
+# Week 1 
+
+## Bash commands
 Some simple bash commands for viewing files in the terminal.
 
 To view the content of a file use:
@@ -35,7 +41,7 @@ Use `chmod` to change the permissions of a file:
 chmod -x myFile.py
 ```
 
-## 2) Version control systems and basic commands
+## Version control systems and basic commands
 A version control system (VCS) keeps track of all the changes and edits of the files. SCM stands for source-control management. Git is a VCS created by Linus Torvalds, it can be used, on the server or a local machine... we already know how useful it is.
 
 Check git version, install if not install:
@@ -78,7 +84,7 @@ use the `commit` command to add the file to the git directory, use the `-m` flag
 git commit -m "My first commit!"
 ```
 
-## 3) Typical git workflow
+## Typical git workflow
 
 - Changes to the files
 - Stage the with git add
@@ -99,9 +105,9 @@ git log -2
 ```
 
 # Week 2
+[Back to top.](#Git-Notes)
 
 ## Advanced features
-
 Skipping the staging, if all the files are going to be committed, the staging step can be skipped using the `-a` input flag:
 ```bash
 git commit -a -m "Will skip the staging step"
@@ -202,4 +208,7 @@ If the master branch is catching up with the development branch, then this is ca
 Use `--abort` flag to revert changes back to the last commit before the merge.
 
 # Week 3
+[Back to top.](#Git-Notes)
 
+# Week 4
+[Back to top.](#Git-Notes)
