@@ -7,10 +7,13 @@ This repository contains code snippets and examples for different programming la
 - **Date Created**: 2020-07-18
 - **Date modified**: 2020-07-22
 
-The GitHub pages website will appear here: [website](https://dannyramasawmy.github.io/Code-Snippets/). 
+The GitHub pages website will appear [here](https://dannyramasawmy.github.io/Code-Snippets/). 
 
 ## Git
-Follow this link to see examples to 
+[Git Examples](./Git/git_notes.md)
+
+## Bash Examples
+[Bash Examples](./Bash/bash_notes)
 
 ## References
 Online references used to help collate these examples:

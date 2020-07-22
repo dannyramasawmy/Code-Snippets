@@ -1,4 +1,4 @@
-# GIT CHEAT SHEET
+# GIT Notes
 *This cheat sheet will collate useful commands from the google Coursera course on Git and GitHub.*
 
 - **Author**: Danny Ramasawmy
