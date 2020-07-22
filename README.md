@@ -13,7 +13,7 @@ The GitHub pages website will appear [here](https://dannyramasawmy.github.io/Cod
 [Git Examples](./Git/git_notes.md)
 
 ## Bash Examples
-[Bash Examples](./Bash/bash_notes)
+[Bash Examples](./BASH/bash_notes)
 
 ## References
 Online references used to help collate these examples:
