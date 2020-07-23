@@ -15,58 +15,71 @@ Links to to Notes:
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
 -----------
+## Common commands
+List files in a directory:
 ```bash
-# useful_commands.sh
-# 
-# This bash script contains useful commands.
-#
-# Danny Ramasawmy
-# created :  2020-06-23
-
-# check the version
+ls <path>
+# -l - list details
+# -1 - one file per line 
+# -a - see hidden files
+```
+Make or remove a folder:
+```bash
+mkdir <folder name>
+rmdir <folder to delete>
+```
+Change directories, use `~` for the home directory:
+```bash
+cd <path>
+cd ~
+```
+See the version of bash:
+```bash
 echo $BASH_VERSION
-
-# print working directory
+```
+See the working directory:
+```bash
 pwd
+```
+Copy a file:
+```bash
+cp <file> <new file>
+```
+Remove a file:
+```bash
+rm <file>
+```
 
-# list current files and folders
-ls
-# other related options
-# ls <folder name>  # see results in a folder
-# ls -l   			# see details of files
-# ls -1				# list one file per line
-# man list 			# see the manual
+## Files
+Look at the documentation of a command:
+```bash
+man <command>
+```
+Print the file contents to the command line:
+```bash
+cat <file>
+```
+Paginate the contents of a file:
+```bash
+cat <file>
+```
+See the beginning of a file:
+```bash
+head <file>
+```
+See the end of the file:
+```bash
+tail <file>
+```
+Create a file:
+```bash
+touch <newfile>
+```
 
-# make a directory
-mkdir new_folder
-# remove directory
-rmdir new_folder
-# change directory
-cd trees
+## grep
 
-# copy file
-cp maple.txt new_maple.txt
-# remove a file
-rm new_maple.txt
+```bash
 
-# cat command - see whats in a file/concatenate files
-cat pine.txt
-# use more to read page by page of the text file
-more pine.txt
-# use head view the first few lines of a file
-head pine.txt
-# use tail view the first few lines of a file
-tail pine.txt
-
-# tilde expansions
-# change to home directory (using tilde)
-cd ~ 	
-# see previous directory , echo prints to the terminal
-echo ~-
-
-# brace expansion
-# touch, changes the last time-stamp on a file/ can be used
-# to make new files
 # can pass multiple arguments in curly brackets
 touch {apple, banana, orange}
 # brackets can be used for multiple values
