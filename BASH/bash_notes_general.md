@@ -116,6 +116,11 @@ grep -i sit pint.txt | awk {'print $6'}
 ping -c 1 example.com | grep 'bytes from' | cut -d = -f 4
 
 
+# put a longer command - assign output 
+g=$(ping -c 1 example.com | grep 'bytes from' | cut -d = -f 4)
+echo "The ping was $e ms"
+
+
 # scripts start script with this
 #!/bin/bash
 

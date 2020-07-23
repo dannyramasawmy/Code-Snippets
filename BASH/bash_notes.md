@@ -16,3 +16,8 @@ Links to to Notes:
 
 ## Introduction
 Since I mostly use bash for simple scripts or running programs, here is a collection of some useful snippets and code examples!
+
+At the start of every Bash script add the shebang:
+```bash
+#!/bin/bash
+```
