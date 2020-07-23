@@ -14,44 +14,32 @@ Links to to Notes:
 - [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
-## RW files
+-----------
+## Writing files
+Writing files is simple using the `>` character:
 ```bash
-#!/bin/bash
-# This script demonstrates some examples of
-# reading and writing files.
-
-# to write to a file (using >)
 echo "some text" > file.txt
-# read the file
+```
+Files can be read using `cat`:
+```bash
 cat file.txt
-
-# use > alone to clear contents of a file
+```
+The `>` character can be used alone to clear the contents of a file:
+```bash
 > file.txt
 cat file.txt
-
-# use >> to append to a file
+```
+The `>>` can be used to append to a file:
+```bash
 echo "some new text" > file.txt
-echo "Additional text" >> file.txt
+echo "extra text" >> file.txt
 cat file.txt
-
-# while loop to read a line at a time
+```
+Files can be read line by line with a while loop:
+```bash
 i=1
 while read f; do
 	echo "Line $i: $f"
 	((i++))
 done < file.txt
-
-# here document - for long text/commands
-cat << EndOfText
-This is a 
-	multiline
-text string
-EndOfText
-
-# if you add a dash removes spaces in-front of lines
-cat <<- EndOfText
-	This is a 
-	multiline
-	text string
-EndOfText
 ```

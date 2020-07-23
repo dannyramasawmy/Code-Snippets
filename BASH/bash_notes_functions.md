@@ -14,6 +14,7 @@ Links to to Notes:
 - [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
+-----------
 ## Functions
 ```bash
 #!/bin/bash

@@ -1,4 +1,4 @@
-# Loops
+# For-Loops and While-Loops
 *This cheat sheet will collate useful commands from the Bash LinkedIn Learning course on Bash.*
 
 - **Author**: Danny Ramasawmy
@@ -14,45 +14,40 @@ Links to to Notes:
 - [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
+-----------
 ## For Loops
-For loop examples:
+For loops can be written in a few different ways, for example explicitly writing the items to iterate over:
 ```bash
-#!/bin/bash
-# For loop examples.
-
-# simple for-loop
-echo "Simple loop"
 for i in 1 2 3
 do
 	echo $i
 done
-
-# we can use brace expansion for long loops
-echo "Using brace expansion"
+```
+Brace expansions can be used to loop over large arrays:
+```bash
 for i in {1..10..2}
 do
 	echo $i
 done
-
-# c style for-loop
-echo "C-style for-loop"
+```
+They can also be written in the style of c:
+```bash
 for (( i=1; i<=10; i++ ))
 do
 	echo $i
 done
-
-# loop over an array
-echo "Array type expansion"
-# create an array
-arr=("apple" "banana" "cherry")
-# use parameter expansion
+```
+Items in an array can be looped over:
+```bash
+arr=("fork" "knife" "spoon")
 for i in ${arr[@]}
 do 
-	echo "$i is one of my favorite things"
+	echo "$i on the table"
 done
-
+```
+Items in an associative array can be looped:
+```bash
 # associative array
-echo "Associative array example"
 declare -A arr2
 arr2["Name"]="Joan"
 arr2["ID"]="30"
@@ -63,9 +58,9 @@ do
 	# access the correct index and print value
 	echo "$i: ${arr2[$i]}"
 done
-
-# command substitution
-echo "Command substitution example with ls"
+```
+Items returned from a command substitution can be iterated, for example using `ls`:
+```bash
 counter=0
 for i in $(ls)
 do
@@ -74,27 +69,12 @@ do
 done
 ```
 
-# While Loops
-While loop examples.
+## While Loops
+While loops are also available, the while loop requires a condition statement, for example "-le", less than or equal to:
 ```bash
-#!/bin/bash
-# While loop examples.
-
-# counter index
 i=0
-# start while-loop while index < 10
 while [ $i -le 10 ]; do
-	# print the index
 	echo i:$i
-	# increment counter
 	((i+=1))
-# finish loop
-done
-
-# until loop, similar to before, check final value
-j=0
-until [ $j -ge 10 ]; do
-	echo j:$j
-	((j+=1))
 done
 ```

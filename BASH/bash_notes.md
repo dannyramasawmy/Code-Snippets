@@ -14,6 +14,7 @@ Links to to Notes:
 - [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
+-----------
 ## Introduction
 Since I mostly use bash for simple scripts or running programs, here is a collection of some useful snippets and code examples!
 
