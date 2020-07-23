@@ -8,10 +8,10 @@
 Links to to Notes:
 - [Home](./bash_notes) : Introduction  
 - [Variables](./bash_notes_variables) : Variables, Arrays, Strings, Arithmetic  
-- [Loop](./bash_notes_loops) : For-Loops, While Loops
+- [Loops](./bash_notes_loops) : For-Loops, While Loops
 - [Comparisons](./bash_notes_comparisons) : If-Else, Case, Comparisons
 - [Read and Write Files](./bash_notes_rw_files) : Reading, Writing
-- [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
+- [Functions](./bash_notes_functions) : Functions, Arguments, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
 -----------
@@ -102,7 +102,7 @@ echo ${objetcs/%table/spoon}
 ```
 Bash outputs can be highlighted and colored, google ANSI coloring for bash for more details.
 
-## Array
+## Arrays
 Arrays can be created with a `()`, and elements accessed with `[]`:
 ```bash
 # empty array

@@ -1,4 +1,4 @@
-# Functions, arguments, input checking
+# Functions, arguments, user inputs
 *This cheat sheet will collate useful commands from the Bash LinkedIn Learning course on Bash.*
 
 - **Author**: Danny Ramasawmy
@@ -8,36 +8,31 @@
 Links to to Notes:
 - [Home](./bash_notes) : Introduction  
 - [Variables](./bash_notes_variables) : Variables, Arrays, Strings, Arithmetic  
-- [Loop](./bash_notes_loops) : For-Loops, While Loops
+- [Loops](./bash_notes_loops) : For-Loops, While Loops
 - [Comparisons](./bash_notes_comparisons) : If-Else, Case, Comparisons
 - [Read and Write Files](./bash_notes_rw_files) : Reading, Writing
-- [Functions](./bash_notes_functions) : Functions, Arguments, Input Checking, User Input
+- [Functions](./bash_notes_functions) : Functions, Arguments, User Input
 - [General](./bash_notes_general) : A collection of miscellaneous snippets
 
 -----------
 ## Functions
+Functions are made using the `function` keyword, the `$1` and `$2` are the first and second input argument to a bash function:
 ```bash
-#!/bin/bash
-# Function examples.
-
-# simple function
 function greet {
 	# a greeting function
-	# $1 : indicates the first argument passed to the function
-	# $2 : etc etc is the next argument
+	# $1 : indicates the first argument passed
+	# $2 : is the next argument
 	echo "Hi there $1! How is your $2?"
 }
-
-# test statement
-echo "And now, a greeting"
-# call the function
-greet
-# passing arguments with a space after the function
+```
+Testing the statement, pass arguments with a space after the function
+:
+```bash
 greet Danny morning
-
-
-# passing in multiple arguments
-function numberthings {
+```
+Multiple arguments can be handle by looping using `$@` 
+```bash
+function numbers {
 	i=1
 	# $@ indicates all the function arguments
 	for f in $@; do
@@ -49,22 +44,15 @@ function numberthings {
 }
 
 # use command expansion to send the current directory list
-numberthings $(ls)
+numbers $(ls)
 # or use multiple arguments 
-numberthings one two three four
-
+numbers one two three four
 ```
 
 ## Arguments
-```bash
-#!/bin/bash
-# Argument and flags.
+Flags and arguments can be defined with functions. The `getopts` command can be used, see below, `u:` flag has the colon after which indicates the option expects an argument, `ab` do not have options. The `:` before indicates all flags which are not listed
 
-# flag example
-#./argument_flag_examples.sh -p hello -u     
-# u p flags, the colon "u:" after indicates it expects arguments
-# a b are flags, which do not have arguments
-# ":"" before indicates all flags which were not listed
+```bash
 while getopts :u:p:ab option; do
 	# compare to cases, order does not matter
 	case $option in
@@ -78,89 +66,15 @@ while getopts :u:p:ab option; do
 done
 # print the user name and password, 
 echo "User: $user / Pass: $pass"
-
-
-
-
-# print first argument to this script
-echo "This is the first argument '$1'"
-# print second argument etc..
-echo "This is the second argument '$2'"
-# for multiple arguments
-# $@ for the array of arguments
-for i in $@
-do
-	echo $i
-done
-# $# for the number of arguments
+```
+Use `$#` to return the number of arguments:
+```bash
 echo "There were $# arguments passed to this script."
 ```
 
-## Input checking
-```bash
-#!/bin/bash
-# Check the correct number of inputs;
-
-# Try
-# ./input_checking_example 
-# ./input_checking_example  Dan 3
-# ./input_checking_example Danny 3 29 
-
-
-# if the number of input arguments is less than 3
-if [ $# -lt 3 ]; then
-	# use cat to print a long message
-	cat <<- EOM
-	This comman requires three arguments:
-	username, id, and a number.
-	EOM
-# else do something 
-else
-	# print the input arguments
-	echo "Username : $1"
-	echo "ID : $2"
-	echo "Numer : $3"
-fi
-
-
-# or use a while loop for a read command
-# prompt for a favorite animal
-read -p "Favorite animal?" a
-# while a is a null string (-z) 
-while [[ -z "$a" ]]; do
-	# repeat statement
-	read -p "Again: Favorite animal?" a
-done
-echo "Thank you, $a"
-
-
-# or use a default answer
-# prompt for a favorite animal, assumed answer in brackets
-read -p "Favorite animal? [cat]" a
-# while a is a null string (-z) 
-while [[ -z "$a" ]]; do
-	# assign assumed answer
-	a="cat"
-done
-echo "Thank you, $a"
-
-
-# input validation
-# prompt for input
-read -p "What year? [nnnn]" a
-# use a regular expression, 
-# if a is not a number from 1 to 9 four elements
-while [[ ! $a =~ [0-9]{4} ]]; do
-	read -p "Again: What year? [nnnn]" a
-done
-```
-
 ## User input
+The `read` command can be used to get a user input:
 ```bash
-#!/bin/bash
-# User input examples.
-
-# read command to read input
 echo "What is your name?"
 read name
 # -s flag to not display input
@@ -170,9 +84,9 @@ read -s pass
 read -p "Favorite animal? " animal
 # print to check
 echo "name: $name, pass: $pass, animal $animal"
-
-
-# using select, for a list of options
+```
+The `select` command can be used to give options:
+```bash
 select option in "cat" "dog" "bird" "fish" "quit"
 do 
 	# test
