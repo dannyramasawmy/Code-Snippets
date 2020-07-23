@@ -16,51 +16,25 @@ Links to to Notes:
 
 -----------
 ## If-Else
+If else statements use the keywords, `if`, `elif`, `else`, use `fi` to end the if-statement:
 ```bash
-#!/bin/bash
-# If statement examples.
-
-# if expression
-# then
-# 	echo "True"
-# else
-# 	echo "False"
-# fi
-#
-# or
-# if expression; then
-# 	echo "True"
-# elif expression2; then
-# 	echo "False"
-# fi
 a=4
-if [ $a -gt 4 ]; then
+if [ $a -gt 4 ]; 
+then
 	echo "$a is greater than 4" 
-elif [ $a -lt 4 ]; then
+elif [ $a -lt 4 ]; 
+then
 	echo "$a is less than 4"
 else 
 	echo "$a is equal to 4"
 fi
-
-# evaluate a regular expression
-# square brackets are a regular expression
-b="hel10"
-if [[ $a =~ [0-9]+ ]]; then
-	echo "There are numbers in the string: $b"
-else
-	echo "there are no numbers in the string $b"
-fi
-
 ```
+Regular expressions can also be used, see below.
 
 ## Case
+If there are multiple options, it may be better to use `case`, use `esac` to end the case statement:
 ```bash
-#!/bin/bash
-# Switch-Case example.
-
-# test 
 a="turnip"
-# test conditions
 case $a in
 	# in cat? then print feline
 	cat) echo "Feline";;
@@ -74,58 +48,55 @@ esac
 ```
 
 ## Comparisons
+Comparisons in bash use fairly standard operators, these must be evaluated within square brackets `[[ ]]`, note there should be a space between the square brackets and the variables:
+- less than 				- `[[ $a < $b ]]`
+- greater than				- `[[ $a > $b ]]`
+- less than or equal to 	- `[[ $a <= $b ]]`
+- greater than or equal to 	- `[[ $a >= $b ]]`
+- equal						- `[[ $a == $b ]]`
+- not equal 				- `[[ $a != $b ]]`
+
+For example, comparing a string will return a boolean, note the `$?` is used and a `0` is true, `1` is false:
 ```bash
-#!/bin/bash
-# Logic comparisons.
-
-# standard operations use [[ expression ]] for strings
-# less than 				: [[ $a < $b ]]
-# greater than				: [[ $a > $b ]]
-# less than or equal to 	: [[ $a <= $b ]]
-# greater than or equal to 	: [[ $a >= $b ]]
-# equal						: [[ $a == $b ]]
-# not equal 				: [[ $a != $b ]]
-#
-
-# comparing strings, 0 == success
+# pass
 [[ "cat" == "cat" ]]
 echo $?
-
-# the $? can be used to echo the return value 1 == fail
+# fail
 [[ "cat" == "dog" ]]
 echo $?
+```
 
-# in the example below, the numbers are given as a string
+
+Additionally numbers can make use of comparison operators:
+- less than 				: `[[ $a -lt $b ]]`
+- greater than				: `[[ $a -gt $b ]]`
+- less than or equal to 	: `[[ $a -le $b ]]`
+- greater than or equal to 	: `[[ $a -ge $b ]]`
+- equal						: `[[ $a -eq $b ]]`
+- not equal 				: `[[ $a -ne $b ]]`
+
+In this example the numbers are using the string operators, the output gives surprising answers:
+```bash
 [[ 20 > 100 ]]
 echo $?
-
-# standard operations use [[ expression ]] for numbers
-# less than 				: [[ $a -lt $b ]]
-# greater than				: [[ $a -gt $b ]]
-# less than or equal to 	: [[ $a -le $b ]]
-# greater than or equal to 	: [[ $a -ge $b ]]
-# equal						: [[ $a -eq $b ]]
-# not equal 				: [[ $a -ne $b ]]
-#
-
-# using the arithmetic comparison operators
+```
+The arithmetic comparison operators need to be used to get the correct answer:
+```bash
 [[ 20 -gt 100 ]]
 echo $?
+```
+For multiple comparisons use these operators:
+- logical AND 	:	`[[ $a && $b ]]`
+- logical OR 	:	`[[ $a || $b ]]`
+- logical NOT 	:	`[[ ! $a ]]`
 
-# logic operators
-# logical AND 	:	[[ $a && $b ]]
-# logical OR 	:	[[ $a || $b ]]
-# logical NOT 	:	[[ ! $a ]]
+String null value:
+- is null		: `[[ -z $a ]]`
+- is not null  	: `[[ -n $a ]]`
 
-# string null value
-# is null		: [[ -z $a ]]
-# is not null  	: [[ -n $a ]]
-
-# an example, is string a null and is string b not null
-echo '[[ -z $a && -n $b ]]'
+```bash
 a=""
 b="cat"
 [[ -z $a && -n $b ]]
 echo "$? : 0 is success"
-
 ```
