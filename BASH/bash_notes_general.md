@@ -43,7 +43,8 @@ pwd
 ```
 Copy a file:
 ```bash
-cp <file> <new file>
+cp -v <file> <new file>
+# -v flag is verbose
 ```
 Remove a file:
 ```bash
@@ -73,74 +74,65 @@ tail <file>
 ```
 Create a file:
 ```bash
-touch <newfile>
+touch <newfile0> <newfile1> ... <newfileN>
+```
+## Brace expansions
+Multiple values can be created with `{}`, for example making files with names 1 to 10:
+```bash
+touch {1..10}
+```
+The can have left zero padding, they will be padded to the length of the longest number
+```bash
+# with zero padding
+echo {01..100}
+```
+Intervals can be specified with a third parameter:
+```bash
+echo {1..10..2}
+```
+Letters can also be expanded, they are in order of 1) capitals -> other characters -> lower case:
+```bash
+echo {A..z}
+echo {A..F..2}
 ```
 
-## grep
-
+## Pip
+Pipe ls into wc to count files in a folder:
 ```bash
-
-# can pass multiple arguments in curly brackets
-touch {apple, banana, orange}
-# brackets can be used for multiple values
-echo {1..100}
-# add zero padding to names, create multiple files add 0 in front
-touch file_{01..100}
-# add intervals, 1 to 10 in steps of 2
-echo {1..10..2}
-# this works with letters too in order of 
-# 1: capitals 2: other characters 3: lower case
-echo {A..z}
-# and with intervals
-echo {A..F..2}
-# chain these together, i.e, for making many files
-
-# list items in dir 1 element per line
-# pipe into wc and count lines (count number of files)
 ls -1 | wc -l 
-
-# use | to pipe output from one command into another
+```
+Pipe ls into other functions, such as more:
+```bash
 ls | more
+```
 
-# copy all the files in this folder into a new folder
-# -v is "verbose" show what is being done
-# * means all
-mkdir ..newfolder
-cp -v * ../newfolder
-# redirect outputs
-cp -v * ../newfolder 1>../sucess.txt 2>../error.txt
-# redirect to one file
-cp -v * ../newfolder &>../log.txt
-# redirect to nowhere
-cp -v * ../newfolder &>/dev/null
+## Searching files
+Use `grep` to search for a string in a file, try with the text file, the `-i` flag is case insensitive:
+```bash
+grep <search word> <file>
+grep FINDME lorem.txt
+grep -i findme lorem.txt
+```
+Pipe the string into `awk` and print the third in the line:
+```bash
+grep -i find lorem.txt | awk {'print $3'}
+```
+Also search for `sed` and `awk`.
 
+## Time
+The date and time can be formatted wit the `date` function, this might be useful for appending this information to files...etc...:
+```bash
+date
+```
+This can be formatted:
+```bash
+date +"%d-%m-%y"
+date +"%H-%M-%S"
+```
 
-# grep
-# grep <search term> <file>
-grep sit pine.txt
-# i flag means case insensitive
-grep -i sit pint.txt
-# pipe results into awk, use print to print 6th item in that line
-grep -i sit pint.txt | awk {'print $6'}
-# ping - check response time at example .com
-# -c option count set to 1
-# search output for 'bytes from'
-# cut the output by the delimiter -d =
-# take the fourth field -f 4
-ping -c 1 example.com | grep 'bytes from' | cut -d = -f 4
-
-
-# put a longer command - assign output 
-g=$(ping -c 1 example.com | grep 'bytes from' | cut -d = -f 4)
-echo "The ping was $e ms"
-
-
-# scripts start script with this
-#!/bin/bash
-
-# sed and awk
-
-# built in variables
+## Built in variables
+Bash has some built in variables which can be called, google for more info:
+```bash
 # return current directory
 $PWD
 # return machine type
@@ -153,15 +145,4 @@ $BASH_VERSION
 $SECONDS
 # random number
 $RANDOM
-
-# date
-# returns the date
-date
-# return formatted date d/m/y
-date +"%d-%m-%y"
-# hr min sec
-date +"%H-%M-%S"
-
-
-
 ```
