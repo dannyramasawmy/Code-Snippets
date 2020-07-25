@@ -1,5 +1,5 @@
 # For-Loops and While-Loops
-*This cheat sheet will collate useful commands from the Bash LinkedIn Learning course on Bash.*
+*This cheat sheet will collate useful commands from the Bash LinkedIn Learning course: Learning Bash Scripting.*
 
 - **Author**: Danny Ramasawmy
 - **Date Created**: 2020-07-22
