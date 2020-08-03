@@ -15,3 +15,5 @@ The GitHub pages website will appear [here](https://dannyramasawmy.github.io/Cod
 ### Bash Examples
 [Bash Examples](./BASH/bash_notes)
 
+### Python
+[Python Examples](./Python/python_notes.md)
