@@ -146,3 +146,9 @@ $SECONDS
 # random number
 $RANDOM
 ```
+
+## Remove dir-paths from terminal
+Use the code below to remove clutter in the terminal by hiding the path (stack-exchange).
+```bash
+export PS1='\u@\h: '
+```
