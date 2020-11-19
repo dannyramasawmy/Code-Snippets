@@ -13,7 +13,7 @@ The GitHub pages website will appear [here](https://dannyramasawmy.github.io/Cod
 [Git Examples](./Git/git_notes.md)
 
 ### Bash Examples
-[Bash Examples](./BASH/bash_notes)
+[Bash Examples](./BASH/bash_notes.md)
 
 ### Python
 [Python Examples](./Python/python_notes.md)
