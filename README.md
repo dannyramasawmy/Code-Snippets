@@ -15,5 +15,9 @@ The GitHub pages website will appear [here](https://dannyramasawmy.github.io/Cod
 ### Bash Examples
 [Bash Examples](./BASH/bash_notes.md)
 
+### Python, C++ and MATLAB Comparisons
+[Comparison](./Languages/language_comparison.md)
+
 ### Python
 [Python Examples](./Python/python_notes.md)
+
