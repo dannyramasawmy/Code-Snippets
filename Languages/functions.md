@@ -38,6 +38,7 @@ def functionName2(**kwargs):
     print(kwargs.values())
     return 0
 ```
+
 ```c++
 // c++
 int functionName(int a, int &b,  int * c) {
@@ -58,6 +59,7 @@ T functionName(T a, T &b, T * c) {
 }
 ```
 - c++ variadic https://en.cppreference.com/w/cpp/utility/variadic
+
 ```MATLAB
 % MATLAB
 function [a, b, c] = functionName(A, B, C)
