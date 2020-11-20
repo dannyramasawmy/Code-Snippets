@@ -15,7 +15,6 @@ Jump to section:
 ```python
 # python
 ```
-
 ```c++
 // c++
 ```
