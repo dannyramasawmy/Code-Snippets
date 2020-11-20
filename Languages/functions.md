@@ -47,13 +47,47 @@ int functionName(int a, int &b,  int * c) {
 float functionName(float a, float &b, int * c) {
     return a + b + *c;
 }
+
+int functionName(int a = 1, int b = 2,  int c = 3) {
+    return a + b + *c;
+}
 // or use template
 template <typename  T>
 T functionName(T a, T &b, T * c) {
   return a + b + *c;
 }
 ```
+- c++ variadic https://en.cppreference.com/w/cpp/utility/variadic
 ```MATLAB
 % MATLAB
+function [a, b, c] = functionName(A, B, C)
+    a = A;
+    b = B;
+    c = C;
+end
 
+% variable inputs and outputs
+function acceptVariableNumInputs(varargin)
+    disp("Number of input arguments: " + nargin)
+    celldisp(varargin)
+end
+
+function varargout = variableNumInputAndOutput(varargin)
+    disp(['Number of provided inputs: ' num2str(length(varargin))])
+    disp(['Number of requested outputs: ' num2str(nargout)])
+    
+    for k = 1:nargout
+        varargout{k} = k;
+    end
+end
+
+[d,g,p] = variableNumInputAndOutput(6,'Nexus')
+
+% default arguments
+function out = foo(in)
+    arguments
+        in(1,1) double {mustBeFinite} = 0;
+    end
+    out = in + 1;
+end
 ```
