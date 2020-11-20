@@ -157,5 +157,27 @@ end
 ```
 
 ## While-loops
+```python
+# python
+i = 1
+while i < 6:
+  i += 1
+else:
+    pass # when condition is not true anymore
+```
+```c++
+// c++
+int i = 0;
+while (i < 5) {
+  i++;
+}
+```
+```MATLAB
+% MATLAB
+while a < 5
+    a = a + 1;  
+end
+```
+
 
 
