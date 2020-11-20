@@ -15,8 +15,8 @@ Jump to section:
 ```c++
 // c++
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 
 ```
 
@@ -60,8 +60,8 @@ T functionName(T a, T &b, T * c) {
 ```
 - c++ variadic https://en.cppreference.com/w/cpp/utility/variadic
 
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 function [a, b, c] = functionName(A, B, C)
     a = A;
     b = B;

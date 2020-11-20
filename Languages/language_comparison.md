@@ -1,5 +1,5 @@
 # Language Comparison
-Comparison of Python, C++ and Matlab.
+Comparison of Python, C++ and matlab.
 
 Jump to section:
 - [Home](./language_comparison.md) - Home 
@@ -18,7 +18,7 @@ Jump to section:
 ```c++
 // c++
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 
 ```

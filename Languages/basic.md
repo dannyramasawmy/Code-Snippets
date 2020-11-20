@@ -18,8 +18,8 @@ Jump to section:
 // ' -> single character
 // "" string literal  
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 % '' -> char
 % "" -> string
 ```
@@ -35,8 +35,8 @@ isinstance(a, list)
 #include <typeinfo>
 typeid(...).type()
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 class(...)
 ```
 
@@ -58,7 +58,7 @@ puts(...);
 str = sprintf(...);
 ```
 ```matlab
-% MATLAB
+% matlab
 disp(...)
 printf(...)
 sprintf(...)
@@ -104,7 +104,7 @@ switch(expression) {
 }
 ```
 ```matlab
-% MATLAB
+% matlab
 if A ~= B ; 
     % pass; 
 elseif (c && b) || (c && d); 
@@ -153,12 +153,12 @@ for (int i = 0; i < M ; i++) {
 }
 
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 for i = [...]
     % do something
-    break
-    continue
+    break;
+    continue;
 end
 
 ```
@@ -179,8 +179,8 @@ while (i < 5) {
   i++;
 }
 ```
-```MATLAB
-% MATLAB
+```matlab
+% matlab
 while a < 5
     a = a + 1;  
 end
