@@ -79,24 +79,66 @@ arr2d[0]
 ## Lists / Cell
 ```python
 # python
+# same as above
 ```
 ```c++
 // c++
 ```
 ```matlab
 % matlab
-
+a = {obj1, obj2, obj3, obj4}
+% same as arrays with curly brace 
+a{1}
+% for nested objects
+a{1}(start:step:end)
+```
 
 
 ## Hash-table / Dictionaries
 ```python
 # python
+# count
+str = 'lsidjlakdjlasjdopaijsdmx,c9w3';
+tb = dict()
+for let in str:
+    if let in tb:
+        tb[let] += 1
+    else:
+        tb[let] = 1
+
+tb.keys()
+tb.values(0)
 ```
 ```c++
 // c++
 ```
 ```matlab
 % matlab
+map = containers.Map(key1, value1)
+% depends on type
+map('key1') = value1
+map(key1) = value1
+map.iskey('test')
+map.isempty()
+
+% count characters
+str = 'lsidjlakdjlasjdopaijsdmx,c9w3';
+tb = containers.Map();
+
+for let = str
+    % add key
+    if tb.isKey(let) == 0
+        tb(let) = 0;
+    end
+    % count letter
+    tb(let) = tb(let) + 1; 
+end
+
+sum = 0;
+for key = tb.keys
+    % keys are cells
+    sum = sum + tb(key{:});
+end
 
 ```
 

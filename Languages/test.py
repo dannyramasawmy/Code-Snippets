@@ -28,3 +28,12 @@ functionName1(2, "me", 'l', 43, [3,2])
 
 
 functionName2(bum = 5)
+
+
+str = 'lsidjlakdjlasjdopaijsdmx,c9w3';
+tb = dict()
+for let in str:
+    if let in tb:
+        tb[let] += 1
+    else:
+        tb[let] = 1
