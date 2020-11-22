@@ -125,6 +125,8 @@ map.isempty()
 str = 'lsidjlakdjlasjdopaijsdmx,c9w3';
 tb = containers.Map();
 
+% only one type!
+
 for let = str
     % add key
     if tb.isKey(let) == 0
@@ -145,13 +147,49 @@ end
 ## Sets
 ```python
 # python
+s1 = {1, 2, 3, 4, 5}
+s2 = {1, 2, 3, 9, 7}
+s3 = {1,2,3}
+s1.add(<item>)
+2 in s1
+>>> True
+s1.issuperset(s3)
+>>> True
+s3.issubset(s1) # is s2 a subset of s1
+>>> True
+s1 - s2
+>>> {4, 5}
+s2 - s1
+>>> {7, 9}
+s1 ^ s2 # symmetric difference
+>>> {4, 5, 7, 9}
+s1 & s2 # intersection
+>>> {1, 2, 3}
+s1 | {5, 6} # union
+>>> {1, 2, 3, 4, 5, 6, 7, 9}
 ```
 ```c++
 // c++
 ```
 ```matlab
 % matlab
-
+s1 = [1,2,3,3,4,5]
+s2 = [1,2,3,7,9]
+unique(s1)
+>>> s1 = [1,2,3,4,5]
+ismember(3, s1)
+>>> true
+ismember(9, s1)
+>>> false
+intersect(s1, s2)
+>>> [1,2,3]
+setdiff(s1, s2)
+>>> [4, 5]
+setdiff(s2, s1)
+>>> [7, 9]
+setxor(s1, s2)
+>>> [4, 5, 7, 9]
+union(s1, s2)
 ```
 
 

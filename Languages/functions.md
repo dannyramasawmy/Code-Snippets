@@ -11,13 +11,14 @@ Jump to section:
 ## Anonymous functions
 ```python
 # python
+f = lambda x,y: x + y
 ```
 ```c++
 // c++
 ```
 ```matlab
 % matlab
-
+f = @(x,y) x + y
 ```
 
 ## Functions
