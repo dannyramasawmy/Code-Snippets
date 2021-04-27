@@ -3,13 +3,13 @@
 
 - **Author**: Danny Ramasawmy
 - **Date Created**: 2020-07-18
-- **Date modified**: 2020-07-25
+- **Date modified**: 2021-04-27
 
 Jump to section:
 - [Notes 1](./git_notes.md) - Bash commands, version control, basic workflow.
 - [Notes 2](./git_notes_2.md) - Advanced features, undoing changes, branches.
-- [Notes 3](./git_notes_3.md) - Coming soon.
-- [Notes 4](./git_notes_4.md) - Coming soon.
+- [Notes 3](./git_notes_3.md) - Remotes and rebasing.
+- [Notes 4](./git_notes_4.md) - Pull requests, squashing changes, issue tracker.
 
 
 # Week 4
