@@ -119,6 +119,17 @@ grep -i find lorem.txt | awk {'print $3'}
 ```
 Also search for `sed` and `awk`.
 
+## Finding files
+Use the `find` command to find files of specific types
+```
+$ find . -name "*<extension>" -type f
+$ find . -name "*.png" -type f
+```
+Delete these files by adding the delete flag
+```
+$ find . -name "*.dng" -type f -delete
+```
+
 ## Time
 The date and time can be formatted wit the `date` function, this might be useful for appending this information to files...etc...:
 ```bash
