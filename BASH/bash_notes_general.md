@@ -122,12 +122,12 @@ Also search for `sed` and `awk`.
 ## Finding files
 Use the `find` command to find files of specific types
 ```
-$ find . -name "*<extension>" -type f
-$ find . -name "*.png" -type f
+find . -name "*<extension>" -type f
+find . -name "*.png" -type f
 ```
 Delete these files by adding the delete flag
 ```
-$ find . -name "*.dng" -type f -delete
+find . -name "*.dng" -type f -delete
 ```
 
 ## Time
