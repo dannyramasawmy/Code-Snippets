@@ -25,3 +25,32 @@ Write-Output (echo, write)
 
 ```
 
+## Scripting
+### Arrays
+Arrays can be created like this:
+```
+$A = 1,2,3,4,5
+$B = 7
+$C = 5..8
+$a = @(<a number of statements>) # make an array from statements
+```
+You can use `.` notation to access properties of the object
+```
+$A.Length # . + tab to see available methods
+```
+Indexing variables:
+```
+$A[0] 
+$A[2] 
+$A[1..4] 
+$A[-3..-1] 
+```
+
+### Loops
+Foreach loops:
+```
+$a = 0..9
+foreach ($e in $a) {
+ $e
+}
+```

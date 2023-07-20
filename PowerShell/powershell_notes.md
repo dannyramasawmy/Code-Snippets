@@ -1,0 +1,79 @@
+# PowerShellNote
+
+## Useful link
+Everything you need to know is here: [Microsofft docs](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/)
+
+## Useful commands
+<command> <alias> #comment
+- `Set-Location`  - (cd, sl) # change directory
+- `Get-Content`  - (cat, gc) # see contents of the file
+- `Add-Content`  - (ac) #append content to a file
+- `Set-Content`  - (sc)
+- `Copy-Item`  - (cp, cpi) 
+- `Remove-Item`  - (rm, ri)
+- `Move-Item`  - (mv,mi)
+- `Start-Job`  - (sajb) # start a powershell background job
+- `Invoke-WebRequest`  - (curl, iwr) # Get content from web address
+- `Measure-Object`  - (measure) # Object details, words lines etc
+- `Resume-Job`  - (rujb) # Restarts a suspended job
+- `Set-Variable`  - (set, sv) sets the value of a variable
+- `Show-Command`  - (shcm) # Starts a gui for power shell commands
+- `Start-Serivce`  - (sasv) # Starts a stopped service
+- `Start-Process`  - (saps, start) # Starts a process
+- `Suspend-Job`  - (sujb)
+- `Wait-Job`  - (wjb)
+- `where-Object`  - (?, where) # Selects objects from a collection based on their properties
+- `Write-Output`  - (echo, write) 
+
+
+## Scripting
+### Arrays
+
+Arrays can be created like this:
+```powershell
+$A = 1,2,3,4,5
+$B = 7
+$C = 5..8
+$a = @(<a number of statements>) # make an array from statements
+```
+
+You can use `.` notation to access properties of the object
+```powershell
+$A.Length # . + tab to see available methods
+```
+
+Indexing variables:
+```powershell
+$A[0] 
+$A[2] 
+$A[1..4] 
+$A[-3..-1] 
+```
+
+### Loops
+Foreach:
+```powershell
+$a = 0..9
+foreach ($e in $a) {
+ $e
+}
+```
+
+For:
+```powershell
+$a = 0..9
+for ($i = 0; $i -le 9; $i++) {
+    $a[i]
+}
+
+```
+
+While:
+```powershell
+$a = 0..9
+$i=0
+while($i -lt 4) {
+  $a[$i]
+  $i++
+}
+```
